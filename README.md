@@ -1,8 +1,9 @@
 ember-wired
 ==============================================================================
 
-[Short description of the addon.]
+This is a simple wrapper library around WiredJS web components.
 
+https://wiredjs.com/
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -22,7 +23,7 @@ ember install ember-wired
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+See https://wiredjs.com/
 
 
 Contributing

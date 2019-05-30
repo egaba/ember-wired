@@ -1,0 +1,1 @@
+export { default } from 'ember-wired/components/wired-button/component';
