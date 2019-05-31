@@ -30,7 +30,7 @@ Usage
 ```
 
 When your content dynamically changes, you'll need to invoke `el.requestUpdate()` to
-redraw the component. 2 things:
+redraw the component. For example:
 
 1. Add an `id` to your card
 

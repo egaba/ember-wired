@@ -29,7 +29,8 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
-    "test:all": "ember try:each"
+    "test:all": "ember try:each",
+    "deploy": "rm -rf docs && ember build -prod --output-path docs && git add . && git commit -am 'deploy gh page' && git push --follow-tags"
   },
   "peerDependencies": {
     "wired-elements": "1.x"
@@ -59,6 +60,7 @@
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.10.0-beta.1",
     "ember-source-channel-url": "^1.1.0",
+    "ember-truth-helpers": "^2.1.0",
     "ember-try": "^1.0.0",
     "eslint-plugin-ember": "^6.2.0",
     "eslint-plugin-node": "^8.0.1",
