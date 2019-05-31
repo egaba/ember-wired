@@ -1,11 +1,11 @@
 ember-wired
 ==============================================================================
 
-WiredJS components are never drawn the same way twice. This is a wrapper library around WiredJS web components. Enjoy!
+This is a wrapper library around WiredJS web components. These components are never drawn the same way twice. Enjoy!
 
 The full list of components found here: https://github.com/wiredjs/wired-elements/tree/master/packages
 
-WiredJS docs: https://wiredjs.com/
+Showcase: https://wiredjs.com/
 
 Compatibility
 ------------------------------------------------------------------------------
