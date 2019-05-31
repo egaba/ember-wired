@@ -14,7 +14,7 @@ This library contains the following components:
 * WiredProgress
 * WiredRadio
 * WiredRadioGroup
-* WiredSelect (aka WiredCombo)
+* WiredSelect (aka wired-combo)
 * WiredSlider
 * WiredTextarea
 * WiredToggle

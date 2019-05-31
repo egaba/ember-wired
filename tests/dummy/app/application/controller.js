@@ -11,5 +11,21 @@ export default Controller.extend({
     <WiredCard @animated="true">
       <p>hello world</p>
     </WiredCard>
+  `,
+
+  componentsList: `
+    * WiredButton
+    * WiredCard
+    * WiredCheckbox
+    * WiredInput
+    * WiredItem
+    * WiredListbox
+    * WiredProgress
+    * WiredRadio
+    * WiredRadioGroup
+    * WiredSelect
+    * WiredSlider
+    * WiredTextarea
+    * WiredToggle
   `
 });
