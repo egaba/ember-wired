@@ -44,6 +44,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.locationType = 'hash';
+    ENV.rootURL = '/ember-wired/';
     // here you can enable a production-specific feature
   }
 
