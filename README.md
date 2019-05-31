@@ -19,13 +19,13 @@ This library contains the following components:
 * WiredTextarea
 * WiredToggle
 
-Although the full list isn't here and since we're including the full bundle, all the web components are still available in web component form. Ex. `<wired-fab id="btn1">favorite</wired-fab>`
+Since we're including the full bundle (at least for this initial release), all WiredJS components are still available in web component form. Ex. `<wired-fab id="btn1">favorite</wired-fab>`
 
 The full list of components found here: https://github.com/wiredjs/wired-elements/tree/master/packages
 
 Showcase: https://wiredjs.com/
 
-Docs: https://egaba.github.io/ember-wired/
+Addon docs: https://egaba.github.io/ember-wired/
 
 Compatibility
 ------------------------------------------------------------------------------
