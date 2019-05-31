@@ -19,6 +19,9 @@ This library contains the following components:
 * WiredTextarea
 * WiredToggle
 
+Note: **this is not the full list**, there are a few components still left out which I plan on adding in eventually.
+Feel free to make a PR to add them earlier if you'd like.
+
 Since we're including the full bundle (at least for this initial release), all WiredJS components are still available in web component form. Ex. `<wired-fab id="btn1">favorite</wired-fab>`
 
 The full list of components found here: https://github.com/wiredjs/wired-elements/tree/master/packages
