@@ -19,6 +19,8 @@ export default Component.extend(Wired, {
     }
   }),
   didInsertElement() {
+    this._super(...arguments);
+
     this.element.pendingValue = this.get('value');
 
     next(this.element, function() {
