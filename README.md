@@ -29,7 +29,8 @@ Usage
 </WiredCard>
 ```
 
-You will need to call `el.requestUpdate()` upon content changes. You'll need to:
+When your content dynamically changes, you'll need to invoke `el.requestUpdate()` to
+redraw the component. 2 things:
 
 1. Add an `id` to your card
 
@@ -39,7 +40,7 @@ You will need to call `el.requestUpdate()` upon content changes. You'll need to:
 </WiredCard>
 ```
 
-2. Setup an observer to call `el.requestUpdate()` when your content changes
+2. Setup an observer to call `el.requestUpdate()` when content updates
 
 ```js
 refreshCard: Ember.observer('activeTab', function() {
