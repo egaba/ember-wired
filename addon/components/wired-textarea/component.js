@@ -1,3 +1,4 @@
+import { next } from '@ember/runloop';
 import Component from '@ember/component';
 import layout from './template';
 import Wired from 'ember-wired/mixins/wired-element';
@@ -15,7 +16,7 @@ export default Component.extend(Wired, {
   didInsertElement() {
     this.element.pendingValue = this.get('value');
 
-    Ember.run.next(this.element, function() {
+    next(this.element, function() {
       this.firstUpdated();
     });
   }

@@ -1,27 +1,47 @@
+import { observer } from '@ember/object';
+import { and } from '@ember/object/computed';
+import { next, cancel, later } from '@ember/runloop';
+import { inject as service } from '@ember/service';
 import Mixin from '@ember/object/mixin';
 
 export default Mixin.create({
-  wired: Ember.inject.service('wired'),
+  wired: service('wired'),
   animated: false,
   rewireInterval: 0,
   minRewireInterval: 150,
-  rewire: Ember.observer('animated', 'wired.allowAnimations', function() {
-    Ember.run.next(this.element, function() {
-      this.requestUpdate();
-    });
-  }),
-  scheduleNextRewire(interval = this.get('rewireInterval') || Math.round(Math.random() * 1200)) {
-    if (this.get('animated') && this.get('wired.allowAnimations')) {
-      Ember.run.later(this, function() {
+  rewire() {
+    if (this.get('_state') === 'inDOM' && this.element) {
+      next(this.element, function() {
+        if (this) {
+          try {
+            this.requestUpdate();
+          } catch(e) { /* unable to rewire */ }
+        }
+      });
+    }
+  },
+  animate: and('animated', 'wired.allowAnimations'),
+  cancelScheduledRewire() {
+    const nextRewire = this.get('nextRewire') || null;
+
+    if (nextRewire) {
+      cancel(nextRewire);
+      this.set('nextRewire', null);
+    }
+  },
+  scheduleNextRewire: observer('animate', function(interval = this.get('rewireInterval') || Math.round(Math.random() * 1200)) {
+    this.cancelScheduledRewire();
+
+    if (this.get('animate')) {
+      const nextScheduledRewire = later(this, function() {
         this.rewire();
         this.scheduleNextRewire();
       }, Math.max(interval, this.get('minRewireInterval')));
+
+      this.set('nextRewire', nextScheduledRewire);
     }
-  },
-  init() {
-    this._super(...arguments);
-    if (this.get('animated')) {
-      this.scheduleNextRewire();
-    }
-  },
+  }),
+  didInsertElement() {
+    this.scheduleNextRewire();
+  }
 });

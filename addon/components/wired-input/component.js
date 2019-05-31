@@ -1,3 +1,5 @@
+import { next } from '@ember/runloop';
+import { observer } from '@ember/object';
 import Component from '@ember/component';
 import layout from './template';
 import Wired from 'ember-wired/mixins/wired-element';
@@ -10,7 +12,7 @@ export default Component.extend(Wired, {
   type: 'text',
   value: '',
   attributeBindings: ['placeholder', 'disabled', 'type', 'value', 'blur:onblur'],
-  clearValue: Ember.observer('value', function() {
+  clearValue: observer('value', function() {
     const value = this.get('value');
     if (!value) {
       this.element.pendingValue = value;
@@ -19,7 +21,7 @@ export default Component.extend(Wired, {
   didInsertElement() {
     this.element.pendingValue = this.get('value');
 
-    Ember.run.next(this.element, function() {
+    next(this.element, function() {
       this.firstUpdated();
     });
   }

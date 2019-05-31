@@ -33,7 +33,13 @@ module.exports = {
         'addon/**',
         'addon-test-support/**',
         'app/**',
-        'tests/dummy/app/**'
+        'tests/**',
+        'node_modules/**',
+        'tmp/**',
+        'docs/**',
+        'dist/**',
+        'assets/**',
+        'tmp/**'
       ],
       parserOptions: {
         sourceType: 'script',

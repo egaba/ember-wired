@@ -3,9 +3,29 @@ ember-wired
 
 This is a wrapper library around WiredJS web components. These components are never drawn the same way twice. Enjoy!
 
+This library contains the following components:
+
+* WiredButton
+* WiredCard
+* WiredCheckbox
+* WiredInput
+* WiredItem
+* WiredListbox
+* WiredProgress
+* WiredRadio
+* WiredRadioGroup
+* WiredSelect (aka WiredCombo)
+* WiredSlider
+* WiredTextarea
+* WiredToggle
+
+Although the full list isn't here and since we're including the full bundle, all the web components are still available in web component form. Ex. `<wired-fab id="btn1">favorite</wired-fab>`
+
 The full list of components found here: https://github.com/wiredjs/wired-elements/tree/master/packages
 
 Showcase: https://wiredjs.com/
+
+Docs: https://egaba.github.io/ember-wired/
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -38,18 +58,17 @@ redraw the component. Using an observer as an example:
 1. Add an `id` to your card
 
 ```html
-<WiredCard @id={{cardId}}>
-  <p>hello world</p>
+<WiredCard @id="my-card-id">
+  <p>{{description}}</p>
 </WiredCard>
 ```
 
 2. Call `el.requestUpdate()` when content updates
 
 ```js
-refreshCard: Ember.observer('activeTab', function() {
-  const cardId = this.get('cardId');
+refreshCard: Ember.observer('description', function() {
   Ember.run.next(function() {
-    const el = document.getElementById(cardId);
+    const el = document.getElementById('my-card-id');
     if (el) {
       el.requestUpdate();
     }
@@ -59,11 +78,11 @@ refreshCard: Ember.observer('activeTab', function() {
 
 ### Animated Components
 
-Set `animate=true` on the components. To disable all animations, set the `allowAnimations`
+Set `@animate="true"` on the components. To disable all animations, set the `allowAnimations`
 flag in the `wired` service.
 
 ```html
-<WiredCard @animate=true>
+<WiredCard @animate="true">
   <p>hello world</p>
 </WiredCard>
 ```

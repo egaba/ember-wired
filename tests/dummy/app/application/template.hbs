@@ -1,30 +1,66 @@
-<p>ember-wired</p>
+<div class="container">
+  <h1>ember-wired</h1>
 
-<section>
-  <p>non animated</p>
-  <WiredButton>
-    click
-  </WiredButton>
+  <section>
+    <h2>non-animated</h2>
 
-  <WiredCard>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </WiredCard>
-</section>
+    {{markdown-to-html basicUsageExample}}
 
-<section>
-  <p>animated</p>
-  <WiredButton @animated=true>
-    click
-  </WiredButton>
+    <div class="flex mb-4">
+      <div class="w-1/5">
+        <h3>WiredButton</h3>
+      </div>
+      <div class="w-4/5">
+        <WiredButton>
+          click
+        </WiredButton>
+      </div>
+    </div>
 
-  <WiredCard @animated=true>
-    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  </WiredCard>
-</section>
+    <div class="flex mb-4">
+      <div class="w-1/5">
+        <h3>WiredCard</h3>
+      </div>
+      <div class="w-4/5">
+        <WiredCard>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </WiredCard>
+      </div>
+    </div>
+  </section>
 
-<p>
-  The full list of components found here:
-  <a href="https://github.com/wiredjs/wired-elements/tree/master/packages">https://github.com/wiredjs/wired-elements/tree/master/packages</a>
-</p>
+  <section>
+    <h2>animated</h2>
 
-<p>Showcase: <a href="https://wiredjs.com/">https://wiredjs.com/</a></p>
+    {{markdown-to-html animatedUsageTemplate}}
+
+    <div class="flex mb-4">
+      <div class="w-1/5">
+        <h3>WiredButton</h3>
+      </div>
+      <div class="w-4/5">
+        <WiredButton @animated="true">
+          click
+        </WiredButton>
+      </div>
+    </div>
+
+    <div class="flex mb-4">
+      <div class="w-1/5">
+        <h3>WiredCard</h3>
+      </div>
+      <div class="w-4/5">
+        <WiredCard @animated="true">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </WiredCard>
+      </div>
+    </div>
+  </section>
+
+  <p>
+    The full list of components found here:
+    <a href="https://github.com/wiredjs/wired-elements/tree/master/packages">https://github.com/wiredjs/wired-elements/tree/master/packages</a>
+  </p>
+
+  <p>Showcase: <a href="https://wiredjs.com/">https://wiredjs.com/</a></p>
+</div>
