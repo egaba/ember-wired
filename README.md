@@ -1,9 +1,7 @@
 ember-wired
 ==============================================================================
 
-This is a wrapper library around WiredJS web components. These components are never drawn the same way twice. Enjoy!
-
-This library contains the following components:
+This is a wrapper library around WiredJS web components. These components are never drawn the same way twice.
 
 * WiredButton
 * WiredCard
@@ -18,13 +16,6 @@ This library contains the following components:
 * WiredSlider
 * WiredTextarea
 * WiredToggle
-
-Note: **this is not the full list**, there are a few components still left out which I plan on adding in eventually.
-Feel free to make a PR to add them earlier if you'd like.
-
-Since we're including the full bundle (at least for this initial release), all WiredJS components are still available in web component form. Ex. `<wired-fab id="btn1">favorite</wired-fab>`
-
-The full list of components found here: https://github.com/wiredjs/wired-elements/tree/master/packages
 
 Showcase: https://wiredjs.com/
 
@@ -52,6 +43,10 @@ Usage
   <p>hello world</p>
 </WiredCard>
 ```
+
+Since we're including the full bundle (at least for this initial release), all WiredJS components are still available in web component form. Ex. `<wired-fab id="btn1">favorite</wired-fab>`
+
+The full list of components found here: https://github.com/wiredjs/wired-elements/tree/master/packages
 
 ### Dynamic content
 
@@ -90,12 +85,10 @@ flag in the `wired` service.
 </WiredCard>
 ```
 
-
 Contributing
 ------------------------------------------------------------------------------
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 License
 ------------------------------------------------------------------------------
