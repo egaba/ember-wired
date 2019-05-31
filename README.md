@@ -3,7 +3,8 @@ ember-wired
 
 This is a wrapper library around WiredJS web components. Enjoy!
 
-https://wiredjs.com/
+The full list of components found here: https://github.com/wiredjs/wired-elements/tree/master/packages
+WiredJS docs: https://wiredjs.com/
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -29,8 +30,10 @@ Usage
 </WiredCard>
 ```
 
+### Dynamic content
+
 When your content dynamically changes, you'll need to invoke `el.requestUpdate()` to
-redraw the component. For example:
+redraw the component. Using an observer as an example:
 
 1. Add an `id` to your card
 
@@ -40,7 +43,7 @@ redraw the component. For example:
 </WiredCard>
 ```
 
-2. Setup an observer to call `el.requestUpdate()` when content updates
+2. Call `el.requestUpdate()` when content updates
 
 ```js
 refreshCard: Ember.observer('activeTab', function() {
@@ -54,7 +57,17 @@ refreshCard: Ember.observer('activeTab', function() {
 })
 ```
 
-The full list of components found here: https://github.com/wiredjs/wired-elements/tree/master/packages
+### Animated Components
+
+Set `animate=true` on the components. To disable all animations, set the `allowAnimations`
+flag in the `wired` service.
+
+```html
+<WiredCard @animate=true>
+  <p>hello world</p>
+</WiredCard>
+```
+
 
 Contributing
 ------------------------------------------------------------------------------
