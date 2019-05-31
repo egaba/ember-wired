@@ -12,7 +12,7 @@
     "hand drawn",
     "wireframe"
   ],
-  "homepage": "https://github.com/wiredjs/wired-elements#readme",
+  "homepage": "https://egaba.github.io/ember-wired/",
   "repository": {
     "type": "git",
     "url": "https://github.com/egaba/ember-wired.git"
@@ -71,6 +71,7 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://egaba.github.io/ember-wired/"
   }
 }
