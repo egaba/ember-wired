@@ -81,11 +81,11 @@ refreshCard: Ember.observer('description', function() {
 
 ### Animated Components
 
-Set `@animate="true"` on the components. To disable all animations, set the `allowAnimations`
+Set `@animated="true"` on the components. To disable all animations, set the `allowAnimations`
 flag in the `wired` service.
 
 ```html
-<WiredCard @animate="true">
+<WiredCard @animated="true">
   <p>hello world</p>
 </WiredCard>
 ```
