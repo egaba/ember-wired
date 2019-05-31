@@ -5810,8 +5810,8 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var n=Ember.Component.extend(t.default,{tagName:"wired-toggle",checked:!1,disabled:!1,attributeBindings:["checked","disabled"]})
 e.default=n}),define("ember-wired/mixins/wired-element",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var t=Ember.Mixin.create({wired:Ember.inject.service("wired"),animate:!1,rewireInterval:0,minRewireInterval:150,rewire:Ember.observer("animate","wired.allowAnimations",function(){Ember.run.next(this.element,function(){this.requestUpdate()})}),scheduleNextRewire:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.get("rewireInterval")||Math.round(1200*Math.random())
-this.get("animate")&&this.get("wired.allowAnimations")&&Ember.run.later(this,function(){this.rewire(),this.scheduleNextRewire()},Math.max(e,this.get("minRewireInterval")))},init:function(){this._super.apply(this,arguments),this.get("animate")&&this.scheduleNextRewire()}})
+var t=Ember.Mixin.create({wired:Ember.inject.service("wired"),animated:!1,rewireInterval:0,minRewireInterval:150,rewire:Ember.observer("animated","wired.allowAnimations",function(){Ember.run.next(this.element,function(){this.requestUpdate()})}),scheduleNextRewire:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:this.get("rewireInterval")||Math.round(1200*Math.random())
+this.get("animated")&&this.get("wired.allowAnimations")&&Ember.run.later(this,function(){this.rewire(),this.scheduleNextRewire()},Math.max(e,this.get("minRewireInterval")))},init:function(){this._super.apply(this,arguments),this.get("animated")&&this.scheduleNextRewire()}})
 e.default=t}),define("ember-wired/wired/service",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Ember.Service.extend({allowAnimations:!0})
