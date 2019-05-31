@@ -42,6 +42,7 @@ export default Mixin.create({
     }
   }),
   didInsertElement() {
+    this._super(...arguments);
     this.scheduleNextRewire();
   }
 });
