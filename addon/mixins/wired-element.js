@@ -26,13 +26,15 @@ export default Mixin.create({
 
     if (nextRewire) {
       cancel(nextRewire);
-      this.set('nextRewire', null);
+      if (this.get('_state') === 'inDOM') {
+        this.set('nextRewire', null);
+      }
     }
   },
   scheduleNextRewire: observer('animate', function(interval = this.get('rewireInterval') || Math.round(Math.random() * 1200)) {
     this.cancelScheduledRewire();
 
-    if (this.get('animate')) {
+    if (this.get('animate') && this.get('_state') === 'inDOM') {
       const nextScheduledRewire = later(this, function() {
         this.rewire();
         this.scheduleNextRewire();
@@ -44,5 +46,9 @@ export default Mixin.create({
   didInsertElement() {
     this._super(...arguments);
     this.scheduleNextRewire();
-  }
+  },
+  willDestroyElement() {
+    this._super(...arguments);
+    this.cancelScheduledRewire();
+  },
 });
