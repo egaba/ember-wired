@@ -6483,7 +6483,7 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Ember.HTMLBars.template({id:"Ty4opz4R",block:'{"symbols":["&default"],"statements":[[15,1]],"hasEval":false}',meta:{moduleName:"ember-wired/components/wired-checkbox/template.hbs"}})
 e.default=t}),define("ember-wired/components/wired-input/component",["exports","ember-wired/components/wired-input/template","ember-wired/mixins/wired-element"],function(e,t,r){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var n=Ember.Component.extend(r.default,{layout:t.default,tagName:"wired-input",disabled:!1,placeholder:"enter a message",type:"text",value:"",attributeBindings:["placeholder","disabled","type","value","blur:onblur"],clearValue:Ember.observer("value",function(){var e=this.get("value")
+var n=Ember.Component.extend(r.default,{layout:t.default,tagName:"wired-input",disabled:!1,placeholder:"placeholder",type:"text",value:"",attributeBindings:["placeholder","disabled","type","value","blur:onblur"],clearValue:Ember.observer("value",function(){var e=this.get("value")
 e||(this.element.pendingValue=e)}),didInsertElement:function(){this._super.apply(this,arguments),this.element.pendingValue=this.get("value"),Ember.run.next(this.element,function(){this.firstUpdated()})}})
 e.default=n}),define("ember-wired/components/wired-input/template",["exports"],function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
